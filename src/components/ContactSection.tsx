@@ -17,7 +17,7 @@ const ContactSection = () => {
             {/* Logo in contact section */}
             <div className="flex items-center mb-6">
               <img 
-                src="/logo-black.png" 
+                src="/kod.lk/logo-black.png" 
                 alt="Ceylon Creative Agency" 
                 className="h-12 w-auto mr-3 opacity-80"
               />

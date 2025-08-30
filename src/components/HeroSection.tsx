@@ -108,7 +108,7 @@ const HeroSection = () => {
           {/* Logo Integration */}
           <div className="flex justify-center mb-8">
             <img 
-              src="/logo-black.png" 
+              src="/kod.lk/logo-black.png" 
               alt="Ceylon Creative Agency" 
               className="h-32 md:h-40 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
             />

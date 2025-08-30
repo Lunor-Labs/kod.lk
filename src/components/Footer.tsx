@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="col-span-2 md:col-span-1">
             <img 
-              src="/logo-black.png" 
+              src="/kod.lk/logo-black.png" 
               alt="Ceylon Creative Agency" 
               className="h-12 w-auto mb-4"
             />
