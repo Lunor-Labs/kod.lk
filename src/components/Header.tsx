@@ -13,7 +13,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
-              src="/kod.lk/logo-black.png" 
+              src="logo-black.png" 
               alt="Ceylon Creative Agency" 
               className="h-16 w-auto hover:scale-105 transition-transform duration-200"
             />

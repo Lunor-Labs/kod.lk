@@ -112,7 +112,7 @@ const HeroSection = () => {
         <div className="text-center mb-16">
           <div className="flex justify-center mb-8">
             <img 
-              src="/kod.lk/logo-black.png" 
+              src="logo-black.png" 
               alt="Ceylon Creative Agency" 
               className="h-20 md:h-24 w-auto opacity-80"
             />
