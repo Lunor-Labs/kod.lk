@@ -8,7 +8,8 @@ const ServicesSection = () => {
       subtitle: 'Cinematic Storytelling',
       description: 'From brand stories to promotional content, we create videos that captivate and engage your audience.',
       icon: Video,
-      image: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+      isVideo: true,
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ const ServicesSection = () => {
       description: 'Professional photography that captures the essence of your brand through stunning visuals.',
       icon: Camera,
       image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      isVideo: false,
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ const ServicesSection = () => {
       description: 'Complete brand identity solutions that reflect your values and resonate with audiences.',
       icon: Palette,
       image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      isVideo: false,
     }
   ];
 
@@ -52,13 +55,24 @@ const ServicesSection = () => {
               key={service.id}
               className="group relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700 transition-all duration-500 cursor-pointer"
             >
-              {/* Image */}
+              {/* Image/Video */}
               <div className="relative h-48 md:h-56 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+                {service.isVideo ? (
+                  <video
+                    src={service.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
                 
                 {/* Icon */}

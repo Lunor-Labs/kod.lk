@@ -56,10 +56,13 @@ const PortfolioSection = () => {
     : portfolioItems.filter(item => item.category === activeFilter);
 
   return (
-    <section className="bg-gradient-to-b from-black via-gray-950 to-black py-16 md:py-24 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-gray-800 via-gray-900 to-black py-16 md:py-24 relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
