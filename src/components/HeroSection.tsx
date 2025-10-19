@@ -25,22 +25,22 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
         />
         {/* Gradient Overlay on Image */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent pointer-events-none"></div>
-      </div>
-
-      {/* Hand Button Section - Black Background */}
-      <div className="bg-black w-full flex justify-center items-center py-8 md:py-12">
-        <button
-          onClick={handleHandClick}
-          className="group relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-300/40 backdrop-blur-sm flex items-center justify-center hover:bg-gray-300/60 hover:scale-110 transition-all duration-300 cursor-pointer"
-          aria-label="Navigate to about section"
-        >
-          <img
-            src="/hand.png"
-            alt="Hand gesture"
-            className="w-12 h-12 md:w-14 md:h-14 object-contain group-hover:scale-110 transition-transform"
-          />
-        </button>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none"></div>
+        
+        {/* Hand Button - Positioned at Bottom of Hero Image */}
+        <div className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 z-30">
+          <button
+            onClick={handleHandClick}
+            className="group relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-300/40 backdrop-blur-sm flex items-center justify-center hover:bg-gray-300/60 hover:scale-110 transition-all duration-300 cursor-pointer"
+            aria-label="Navigate to about section"
+          >
+            <img
+              src="/hand.png"
+              alt="Hand gesture"
+              className="w-12 h-12 md:w-14 md:h-14 object-contain group-hover:scale-110 transition-transform"
+            />
+          </button>
+        </div>
       </div>
     </section>
   );
