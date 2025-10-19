@@ -1,72 +1,88 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
 
 const PortfolioSection = () => {
-  const [activeFilter, setActiveFilter] = useState('All Categories');
+  const [activeFilter, setActiveFilter] = useState('All');
 
-  const categories = ['All Categories', 'Video', 'Photography', 'Branding'];
+  const categories = ['All', 'Video', 'Photography', 'Branding'];
 
   const portfolioItems = [
     {
       id: 1,
       title: 'Ceylon Tea Heritage',
       category: 'Video',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
-      bgColor: 'bg-green-400'
+      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      year: '2024'
     },
     {
       id: 2,
       title: 'Ocean Breeze Resort',
       category: 'Photography',
-      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
-      bgColor: 'bg-blue-400'
+      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      year: '2024'
     },
     {
       id: 3,
       title: 'Spice Island Brand',
       category: 'Branding',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
-      bgColor: 'bg-orange-400'
+      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      year: '2023'
     },
     {
       id: 4,
       title: 'Gem Mining Documentary',
       category: 'Video',
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
-      bgColor: 'bg-purple-400'
+      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      year: '2023'
     },
     {
       id: 5,
       title: 'Traditional Crafts',
       category: 'Photography',
-      image: 'https://images.pexels.com/photos/1667088/pexels-photo-1667088.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
-      bgColor: 'bg-yellow-400'
+      image: 'https://images.pexels.com/photos/1667088/pexels-photo-1667088.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      year: '2024'
     },
     {
       id: 6,
       title: 'Tech Startup Identity',
       category: 'Branding',
-      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
-      bgColor: 'bg-pink-400'
+      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      year: '2023'
     }
   ];
 
-  const filteredItems = activeFilter === 'All Categories' 
+  const filteredItems = activeFilter === 'All' 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === activeFilter);
 
   return (
-    <section className="bg-gray-50 py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-b from-black via-gray-950 to-black py-16 md:py-24 relative overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <p className="text-gray-500 text-sm md:text-base uppercase tracking-widest mb-4">Our Work</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Featured Projects
+          </h2>
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Explore our latest creative endeavors
+          </p>
+        </div>
+
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 md:mb-16">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`px-5 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${
                 activeFilter === category
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
+                  ? 'bg-white text-black shadow-lg shadow-white/20'
+                  : 'bg-gray-800/50 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-700'
               }`}
             >
               {category}
@@ -74,34 +90,64 @@ const PortfolioSection = () => {
           ))}
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item) => (
+        {/* Portfolio Grid - Masonry Style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {filteredItems.map((item, index) => (
             <div
               key={item.id}
-              className="group cursor-pointer transform hover:scale-105 transition-all duration-300"
+              className={`group relative overflow-hidden rounded-xl cursor-pointer ${
+                index === 0 ? 'md:col-span-2 md:row-span-2' : ''
+              }`}
             >
-              <div className={`${item.bgColor} p-4 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300`}>
+              {/* Image Container */}
+              <div className={`relative overflow-hidden ${
+                index === 0 ? 'h-[400px] md:h-full' : 'h-[300px] md:h-[350px]'
+              }`}>
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-              </div>
-              <div className="mt-4">
-                <h3 className="text-xl font-bold text-gray-900 mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 font-medium">
-                  {item.category}
-                </p>
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                
+                {/* Content Overlay */}
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs md:text-sm text-gray-400 uppercase tracking-wider">
+                        {item.category}
+                      </span>
+                      <span className="text-gray-600">•</span>
+                      <span className="text-xs md:text-sm text-gray-400">
+                        {item.year}
+                      </span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3">
+                      {item.title}
+                    </h3>
+                    
+                    {/* View Project Button */}
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <button className="inline-flex items-center gap-2 text-white text-sm font-medium hover:gap-3 transition-all">
+                        <span>View Project</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Border Effect */}
+                <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/20 transition-all duration-500 rounded-xl pointer-events-none"></div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
+        {/* Bottom CTA */}
+        <div className="text-center mt-12 md:mt-16">
+          <button className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
             View All Projects
           </button>
         </div>
