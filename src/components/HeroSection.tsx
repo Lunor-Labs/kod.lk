@@ -9,43 +9,39 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-black flex flex-col items-center justify-between overflow-hidden">
+    <section className="relative bg-black overflow-hidden">
       {/* Top Navigation */}
-      <div className="w-full flex justify-between items-center px-6 py-4 text-white text-xs md:text-sm z-10">
+      {/* <div className="absolute top-0 left-0 right-0 w-full flex justify-between items-center px-6 py-4 text-white text-xs md:text-sm z-20">
         <button className="hover:text-gray-300 transition-colors">Enter the Universe</button>
         <button className="hover:text-gray-300 transition-colors">Our Work</button>
         <button className="hover:text-gray-300 transition-colors">Start Your Project</button>
+      </div> */}
+
+      {/* Hero Image Section - Full Width */}
+      <div className="relative w-full mt-20 md:mt-24" style={{ aspectRatio: '9/16' }}>
+        <img
+          src="/hero.png"
+          alt="KOD Universe"
+          className="w-full h-full object-cover"
+        />
+        {/* Gradient Overlay on Image */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent pointer-events-none"></div>
       </div>
 
-
-      {/* Hero Image */}
-      <div className="flex-1 w-full flex items-center justify-center relative">
-        <div className="relative w-full max-w-2xl px-4">
-          <img
-            src="/hero.png"
-            alt="KOD Universe"
-            className="w-full h-auto object-contain"
-          />
-        </div>
-      </div>
-
-      {/* Hand Button */}
-      <div className="pb-8 md:pb-12 z-20">
+      {/* Hand Button Section - Black Background */}
+      <div className="bg-black w-full flex justify-center items-center py-8 md:py-12">
         <button
           onClick={handleHandClick}
-          className="group hover:scale-110 transition-all duration-300 cursor-pointer"
+          className="group relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-300/40 backdrop-blur-sm flex items-center justify-center hover:bg-gray-300/60 hover:scale-110 transition-all duration-300 cursor-pointer"
           aria-label="Navigate to about section"
         >
           <img
             src="/hand.png"
             alt="Hand gesture"
-            className="w-16 h-16 md:w-20 md:h-20 object-contain group-hover:scale-110 transition-transform drop-shadow-lg"
+            className="w-12 h-12 md:w-14 md:h-14 object-contain group-hover:scale-110 transition-transform"
           />
         </button>
       </div>
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none"></div>
     </section>
   );
 };
