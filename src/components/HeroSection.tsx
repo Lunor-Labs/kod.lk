@@ -18,15 +18,18 @@ const HeroSection = () => {
       </div> */}
 
       {/* Hero Image Section - Full Width */}
-      <div className="relative w-full mt-20 md:mt-24" style={{ aspectRatio: '9/16' }}>
-        <img
-          src="/hero.png"
-          alt="KOD Universe"
-          className="w-full h-full object-cover"
-        />
+      <div className="relative w-full mt-20 md:mt-24 aspect-[9/16] md:aspect-video lg:max-h-[85vh]">
+        <picture>
+          <source media="(min-width: 768px)" srcSet="/hero-desktop.png" />
+          <img
+            src="/hero-mobile.png"
+            alt="KOD Universe"
+            className="w-full h-full object-cover object-center"
+          />
+        </picture>
         {/* Gradient Overlay on Image */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none"></div>
-        
+
         {/* Hand Button - Positioned at Bottom of Hero Image */}
         <div className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 z-30">
           <button

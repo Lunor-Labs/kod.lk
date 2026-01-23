@@ -9,44 +9,86 @@ const PortfolioSection = () => {
   const portfolioItems = [
     {
       id: 1,
-      title: 'Ceylon Tea Heritage',
-      category: 'Video',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      title: 'Nivartana Blue Butterfly PEA',
+      category: 'Branding',
+      image: '/BBF 001_Packaging.jpg',
       year: '2024'
     },
     {
       id: 2,
       title: 'Ocean Breeze Resort',
-      category: 'Photography',
-      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      category: 'Branding',
+      image: '/BBF 002_Packaging.jpg',
       year: '2024'
     },
     {
       id: 3,
       title: 'Spice Island Brand',
       category: 'Branding',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      image: '/BBF 003_Packaging.jpg',
       year: '2023'
     },
     {
       id: 4,
-      title: 'Gem Mining Documentary',
-      category: 'Video',
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      title: 'Ceylon ZIMT',
+      category: 'Branding',
+      image: '/C 001_Packaging.jpg',
       year: '2023'
     },
     {
       id: 5,
-      title: 'Traditional Crafts',
-      category: 'Photography',
-      image: 'https://images.pexels.com/photos/1667088/pexels-photo-1667088.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      title: 'HIBISKUS',
+      category: 'Branding',
+      image: '/H 001_Packaging.jpg',
       year: '2024'
     },
     {
       id: 6,
-      title: 'Tech Startup Identity',
+      title: 'HIBISKUS Nvaratana',
       category: 'Branding',
-      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800&h=600',
+      image: '/H 002_Packaging.jpg',
+      year: '2023'
+    },
+        {
+      id: 7,
+      title: 'Nivartana Blue Butterfly PEA',
+      category: 'Branding',
+      image: '/H 003_Packaging.jpg',
+      year: '2024'
+    },
+    {
+      id: 8,
+      title: 'Ocean Breeze Resort',
+      category: 'Branding',
+      image: '/M 002_Packaging.jpg',
+      year: '2024'
+    },
+    {
+      id: 9,
+      title: 'Spice Island Brand',
+      category: 'Branding',
+      image: '/M 003_Packaging.jpg',
+      year: '2023'
+    },
+    {
+      id: 10,
+      title: 'Ceylon ZIMT',
+      category: 'Branding',
+      image: '/MORINGA 001_Packaging.jpg',
+      year: '2023'
+    },
+    {
+      id: 11,
+      title: 'HIBISKUS',
+      category: 'Branding',
+      image: '/T 002_Packaging.jpg',
+      year: '2024'
+    },
+    {
+      id: 12,
+      title: 'HIBISKUS Nvaratana',
+      category: 'Branding',
+      image: '/T 003_Packaging.jpg',
       year: '2023'
     }
   ];
