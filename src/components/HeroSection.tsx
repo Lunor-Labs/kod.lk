@@ -9,7 +9,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative bg-black overflow-hidden">
+    <section id="hero" className="relative bg-black overflow-hidden">
       {/* Top Navigation */}
       {/* <div className="absolute top-0 left-0 right-0 w-full flex justify-between items-center px-6 py-4 text-white text-xs md:text-sm z-20">
         <button className="hover:text-gray-300 transition-colors">Enter the Universe</button>

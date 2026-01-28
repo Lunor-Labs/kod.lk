@@ -4,7 +4,13 @@ import { Search, User, Menu, X } from 'lucide-react';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = ['Index', 'News', 'Projects', 'Pages', 'Shop', 'Contact'];
+  const navItems = [
+    { name: 'Home', id: 'hero' },
+    { name: 'Services', id: 'services' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Choose plan', id: 'pricing' },
+    { name: 'Contact', id: 'contact' }
+  ];
 
   return (
     <header className="bg-gray-50 border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm">
@@ -23,11 +29,18 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <a
-                key={item}
-                href="#"
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const section = document.getElementById(item.id);
+                  if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
               >
-                {item}
+                {item.name}
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-amber-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
               </a>
             ))}
@@ -58,11 +71,19 @@ const Header = () => {
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <a
-                  key={item}
-                  href="#"
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const section = document.getElementById(item.id);
+                    if (section) {
+                      section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setIsMenuOpen(false);
+                  }}
                   className="text-gray-700 hover:text-gray-900 px-3 py-2 text-base font-medium transition-colors duration-200"
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </div>
