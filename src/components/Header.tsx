@@ -12,6 +12,25 @@ const Header = () => {
     { name: 'Contact', id: 'contact' }
   ];
 
+<<<<<<< Updated upstream
+=======
+  const handleNavClick = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      // Get header height (64px on mobile, 80px on desktop)
+      const headerHeight = window.innerWidth >= 768 ? 80 : 64;
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = sectionTop - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setIsMenuOpen(false);
+  };
+
+>>>>>>> Stashed changes
   return (
     <header className="bg-gray-50 border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
