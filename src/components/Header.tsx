@@ -28,7 +28,22 @@ const Header = () => {
   }, []);
 
   const handleNavClick = (id: string) => {
+<<<<<<< Updated upstream
     // Close mobile menu first
+=======
+    const section = document.getElementById(id);
+    if (section) {
+      // Get header height (64px on mobile, 80px on desktop)
+      const headerHeight = window.innerWidth >= 768 ? 80 : 64;
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = sectionTop - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+>>>>>>> Stashed changes
     setIsMenuOpen(false);
     
     // Add a small delay to ensure menu animation completes before scrolling
