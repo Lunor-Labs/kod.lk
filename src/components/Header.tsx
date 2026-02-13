@@ -99,20 +99,58 @@ const Header = () => {
               
               {/* Profile Dropdown */}
               {isProfileOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-40">
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-t-lg">
-                    My Profile
-                  </a>
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                    Account Settings
-                  </a>
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                    My Projects
-                  </a>
-                  <hr className="my-2" />
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-b-lg text-red-600">
-                    Logout
-                  </a>
+                <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 z-40 animate-fadeIn">
+                  <div className="py-2">
+                    <a 
+                      href="#" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors duration-150 text-sm font-medium"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsProfileOpen(false);
+                        // Handle navigation to profile
+                      }}
+                    >
+                      My Profile
+                    </a>
+                    <a 
+                      href="#" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors duration-150 text-sm font-medium"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsProfileOpen(false);
+                        // Handle navigation to account settings
+                      }}
+                    >
+                      Account Settings
+                    </a>
+                    <a 
+                      href="#" 
+                      className="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors duration-150 text-sm font-medium"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsProfileOpen(false);
+                        // Handle navigation to projects
+                      }}
+                    >
+                      My Projects
+                    </a>
+                    <div className="border-t border-gray-100 my-1"></div>
+                    <a 
+                      href="#" 
+                      className="block px-4 py-3 text-red-600 hover:bg-red-50 transition-colors duration-150 text-sm font-medium"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsProfileOpen(false);
+                        // Handle logout
+                        if (confirm('Are you sure you want to logout?')) {
+                          // Logout logic here
+                          console.log('User logged out');
+                        }
+                      }}
+                    >
+                      Logout
+                    </a>
+                  </div>
                 </div>
               )}
             </div>
