@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scroll offset for sticky header */
+html {
+  scroll-padding-top: 64px;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+
 @layer utilities {
   .hero-card {
     transform-style: preserve-3d;
